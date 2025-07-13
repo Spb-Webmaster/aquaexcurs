@@ -1,0 +1,23 @@
+@layer components {
+  .reviews-carousel {
+    @apply relative my-8!;
+  }
+  .reviews-carousel .review {
+    @apply relative bg-white;
+  }
+  .reviews-carousel .review img {
+    @apply relative drop-shadow-sm rounded-lg m-auto!;
+  }
+  .reviews_prev,
+  .reviews_next {
+    @apply bg-[#013A7C] w-[44px] h-[44px] rounded-[100%] relative mr-5! transition-all duration-200 bg-no-repeat bg-center hover:cursor-pointer hover:bg-[#03a9f4];
+  }
+  .reviews_prev {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDIxIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xOS41IDRIMTAuNzVIMk0yIDRMNC41IDFNMiA0TDQuNSA2LjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=");
+  }
+  .reviews_next {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDIwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDRIOS43NUgxOC41TTE4LjUgNEwxNiAxTTE4LjUgNEwxNiA2LjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=");
+  }
+}
+
+/*# sourceMappingURL=home_review.css.map */

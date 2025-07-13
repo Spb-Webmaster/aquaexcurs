@@ -1,0 +1,9 @@
+@layer components {
+    .custom-100 {
+        p {
+            @apply sm:max-lg:w-full!
+        }
+    }
+
+}
+

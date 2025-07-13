@@ -1,0 +1,41 @@
+@import "@fontsource-variable/roboto-flex/standard.css";
+@import "@fontsource/rubik-mono-one";
+@import "@fontsource/rammetto-one";
+@import "@fontsource/rambla";
+
+@import "./menu/menu.css";
+@import "./layouts/about_company.css";
+@import "./layouts/home_img.css";
+@import "./layouts/home_img2.css";
+@import "./layouts/home_information_now.css";
+@import "./layouts/home_private_excursion.css";
+@import "./layouts/home_review.css";
+@import "./layouts/header.css";
+@import "./layouts/footer.css";
+@import "@fancyapps/ui/dist/fancybox/fancybox.css";
+@import "flatpickr/dist/flatpickr.css";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@import "@preline/overlay/variants.css";
+
+@import 'tailwindcss';
+
+@import "./style.css";
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-roboto-flex: "Roboto Flex", sans-serif;
+    --font-rubik: "Rubik Mono One", sans-serif;
+    --font-rammetto: "Rammetto One", sans-serif;
+    --font-rambla: "Rambla", sans-serif;
+    --font-segoe: "Segoe Script", sans-serif;
+
+
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Segoe Script";
+    src: url("segoe.eot");
+    src: url("segoe.eot?#iefix")format("embedded-opentype"),
+    url("segoe.woff2")format("woff2"),
+    url("segoe.woff")format("woff"),
+    url("segoe.ttf")format("truetype"),
+    url("segoe.svg#Segoe Script")format("svg");
+}

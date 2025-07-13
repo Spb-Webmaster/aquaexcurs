@@ -1,0 +1,10 @@
+@layer components {
+  .home header {
+    @apply w-[100%] h-auto min-h-[421px] relative;
+  }
+  .home header:before {
+    @apply w-[100%] h-[100%] min-h-[421px] content-[""] block absolute bg-[rgb(0,59,126)]/70;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */
