@@ -1,6 +1,8 @@
 <div class="relative w-full min-h-[150px] bg-gradient-to-r from-[#02356A] via-[#1B5CB4] to-[#2a6cc5] text-white">
     <div class="custom-block">
+
         <div class="flex pt-11 w-full max-sm:block">
+
             <div class="w-[30%] pr-8 max-xl:w-[60%] max-lg:w-[50%] max-sm:w-[100%]">
                 <div class="relative">
                     <x-layout.logo w="150" h="56" class="max-w-[156px] h-auto"/>
@@ -46,6 +48,7 @@
             </div>
 
         </div>
+
     </div>
 
 

@@ -24,7 +24,7 @@
     <div class="custom-block">
         <div class="max-w-3xl m-auto pt-8 pb-4">
             <h1 class="text-white text-center uppercase text-4xl/12 tracking-wider max-md:text-3xl/9 max-sm:text-2xl">
-                <span class="font-rubik">{{ config2('moonshine.home.title1') }}</span> <span class="font-rubik custom-green">{{ config2('moonshine.home.title2') }}</span><br>
+                <span class="font-rubik max-sm:text-3xl">{{ config2('moonshine.home.title1') }}</span> <span class="font-rubik max-sm:text-3xl custom-green">{{ config2('moonshine.home.title2') }}</span><br>
                 <span class="font-roboto font-extralight">{{ config2('moonshine.home.title3') }}</span>
             </h1>
         </div>
