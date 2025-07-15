@@ -1,4 +1,6 @@
-<a href="#" class="flex justify-end items-center text-white uppercase">
+<a href="#" id="specialButton" class="flex justify-end items-center text-white uppercase">
     <span class="pr-4"><img class="min-w-7 min-h-7" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjciIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyNyAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGVsbGlwc2UgY3g9IjEzLjMxOTMiIGN5PSIxMy45NTMzIiByeD0iMTMuMzE5MyIgcnk9IjEzLjg4MzIiIGZpbGw9IiNBRUUzNjMiLz4KPHBhdGggZD0iTTE1LjY4MjggMTQuNDAxMkMxNS42ODI4IDE1LjUxNDIgMTQuODE3MiAxNi40MTY1IDEzLjc0OTQgMTYuNDE2NUMxMi42ODE2IDE2LjQxNjUgMTEuODE1OSAxNS41MTQyIDExLjgxNTkgMTQuNDAxMkMxMS44MTU5IDEzLjI4ODEgMTIuNjgxNiAxMi4zODU5IDEzLjc0OTQgMTIuMzg1OUMxNC44MTcyIDEyLjM4NTkgMTUuNjgyOCAxMy4yODgxIDE1LjY4MjggMTQuNDAxMloiIHN0cm9rZT0iIzA2MEIwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMy43NDk3IDkuNjk4NzhDMTAuODYzOSA5LjY5ODc4IDguNDIxMTEgMTEuNjc1NyA3LjU5OTg1IDE0LjQwMTJDOC40MjEwOSAxNy4xMjY2IDEwLjg2MzkgMTkuMTAzNiAxMy43NDk3IDE5LjEwMzZDMTYuNjM1NCAxOS4xMDM2IDE5LjA3ODIgMTcuMTI2NiAxOS44OTk1IDE0LjQwMTJDMTkuMDc4MiAxMS42NzU3IDE2LjYzNTQgOS42OTg3OCAxMy43NDk3IDkuNjk4NzhaIiBzdHJva2U9IiMwNjBCMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" width="28" height="28" alt="" sizes="" loading="lazy"></span>
     <span class="max-lg:text-sm">Версия для <br class="">слабовидящих</span>
 </a>
+
+

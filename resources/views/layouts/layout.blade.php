@@ -34,7 +34,6 @@
         @include('templates.footer')
     </footer>
 </div>
-
 </body>
 </html>
 

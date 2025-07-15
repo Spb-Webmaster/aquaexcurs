@@ -7,8 +7,8 @@ Fancybox.bind("[data-fancybox]", {
     hideScrollbar: false,
 })
 import "@preline/overlay/index"; //Предварительный пользовательский интерфейс, созданный с помощью Tailwind CSS
-import "slick-carousel/slick/slick"
 
+import "slick-carousel/slick/slick"
 import './script';
 
 
