@@ -1,7 +1,7 @@
 <div class="relative w-full min-h-[150px] bg-gradient-to-r from-[#02356A] via-[#1B5CB4] to-[#2a6cc5] text-white">
     <div class="custom-block">
-        <div class="flex pt-11 w-full">
-            <div class="w-[30%] pr-8 max-xl:w-[60%] max-lg:w-[50%]">
+        <div class="flex pt-11 w-full max-sm:block">
+            <div class="w-[30%] pr-8 max-xl:w-[60%] max-lg:w-[50%] max-sm:w-[100%]">
                 <div class="relative">
                     <x-layout.logo w="150" h="56" class="max-w-[156px] h-auto"/>
                 </div>
@@ -25,10 +25,10 @@
                 </div>
 
             </div>
-            <div class="w-[28%] pl-6  max-xl:w-[40%] max-lg:w-[50%]">
+            <div class="w-[28%] pl-6  max-xl:w-[40%] max-lg:w-[50%] max-sm:w-[100%] max-sm:pl-0 ">
                 <div class="h1-rubik pb-6 pt-3   text-lg/6 text-[#ffffff]">Контакты</div>
 
-                <div class="py-6">
+                <div class="py-6 max-sm:pt-1 max-sm:pb-3">
                 <div class="pb-3 text-base/7">
                     Санкт-Петербург, наб. реки Мойки<br class="max-sm:hidden"> 48-50-52, лит. АК, офис 30
                 </div>
