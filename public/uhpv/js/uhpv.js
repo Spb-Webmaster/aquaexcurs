@@ -1,4 +1,4 @@
-export function uhpv() {
+document.addEventListener('DOMContentLoaded', function () {
 
     var $ua = window.navigator.userAgent;
     var $msie = $ua.indexOf("MSIE ");
@@ -6,7 +6,7 @@ export function uhpv() {
     var special;
     var $version;
     var $subversion;
-    jQuery("html").hide();
+   // jQuery("html").hide();
     (function ($) {
         $.fn.removeClassWild = function (mask) {
             return this.removeClass(function (index, cls) {
@@ -72,7 +72,7 @@ export function uhpv() {
                     }
                 }
             }, On: function () {
-                $("head").append($('<link rel="stylesheet" type="text/css" />').attr("href", "//lidrekon.ru/slep/css/special-hover.min.css"));
+                $("head").append($('<link rel="stylesheet" type="text/css" />').attr("href", "uhpv/css/uhpv.css"));
                 if (!$special) special.Reset();
                 if ($("#specialButton").length) {
                     $special.active = 1;
@@ -172,7 +172,8 @@ export function uhpv() {
             special.On()
         }
         console.info("Special version %s (%s).\nUser agent: %s", $version, $subversion, $ua);
-        $("html").fadeIn(1e3)
+        //$("html").fadeIn(1e3)
+        $("html").show()
     });
     (function (factory) {
         if (typeof define === "function" && define.amd) {
@@ -1515,5 +1516,6 @@ export function uhpv() {
             return d
         }
     }, responsiveVoice = new ResponsiveVoice;
-    var $tpl = '<div id="special"><div class="special-panel"><div class="special-font-size"><span>Шрифт:</span> <button title="Маленький шрифт" value="1"><i>A</i></button> <button title="Средний шрифт" value="2"><i>A</i></button> <button title="Большой шрифт" value="3"><i>A</i></button></div><div class="special-color"><span>Цвет:</span> <button title="Цвет черным по белому" value="1"><i>Ц</i></button> <button title="Цвет белым по черному" value="2"><i>Ц</i></button> <button title="Цвет синим по голубому" value="3" i=""><i>Ц</i></button></div><div class="special-images"><span>Изображения:</span> <button title="Выключить/включить изображения"><i></i></button></div><div class="special-audio"><span>Звук:</span> <button title="Включить/выключить воспроизведение текста" value="0"><i></i></button></div><div class="special-settings"><span>Настройки:</span> <button title="Дополнительные настройки"><i></i></button></div><div class="special-quit"><span>Обычная версия:</span> <button title="Обычная версия сайта"><i></i></button></div></div><div id="special-settings-body"><hr/><h2>Настройки шрифта:</h2><div class="special-font-family"><span>Выберите шрифт:</span> <button value="1"><i>Arial</i></button> <button value="2"><i>Times</i></button></div><div class="special-letter-spacing"><span>Интервал между буквами (<em>Кернинг</em>):</span> <button value="1"><i>Стандартный</i></button> <button value="2"><i>Средний</i></button> <button value="3"><i>Большой</i></button></div><div class="special-line-height"><span>Интервал между строками:</span> <button value="1"><i>Стандартный<br/>интервал</i></button> <button value="2"><i>Полуторный<br/>интервал</i></button> <button value="3"><i>Двойной<br/>интервал</i></button></div><h2>Выбор цветовой схемы:</h2><div class="special-color"><button value="1"><i>Черным<br/>по белому</i></button> <button value="2"><i>Белым<br/>по черному</i></button> <button value="3"><i>Темно-синим<br/>по голубому</i></button> <button value="4"><i>Коричневым<br/>по бежевому</i></button> <button value="5"><i>Зеленым<br/>по темно-коричневому</i></button></div><hr/><div class="special-reset"><button><i>Параметры по умолчанию</i></button></div><div class="special-settings-close"><button><i>Закрыть</i></button></div><div class="avtor"><a href="//lidrekon.ru" target="_blank">lidrekon.ru</a></div></div></div>';
-}
+    var $tpl = '<div id="special"><div class="special-panel"><div class="special-font-size"><span>Шрифт:</span> <button title="Маленький шрифт" value="1"><i>A</i></button> <button title="Средний шрифт" value="2"><i>A</i></button> <button title="Большой шрифт" value="3"><i>A</i></button></div><div class="special-color"><span>Цвет:</span> <button title="Цвет черным по белому" value="1"><i>Ц</i></button> <button title="Цвет белым по черному" value="2"><i>Ц</i></button> <button title="Цвет синим по голубому" value="3" i=""><i>Ц</i></button></div><div class="special-images"><span>Изображения:</span> <button title="Выключить/включить изображения"><i></i></button></div><div class="special-audio"><span>Звук:</span> <button title="Включить/выключить воспроизведение текста" value="0"><i></i></button></div><div class="special-settings"><span>Настройки:</span> <button title="Дополнительные настройки"><i></i></button></div><div class="special-quit"><span>Обычная версия:</span> <button title="Обычная версия сайта"><i></i></button></div></div><div id="special-settings-body"><hr/><h2>Настройки шрифта:</h2><div class="special-font-family"><span>Выберите шрифт:</span> <button value="1"><i>Arial</i></button> <button value="2"><i>Times</i></button></div><div class="special-letter-spacing"><span>Интервал между буквами (<em>Кернинг</em>):</span> <button value="1"><i>Стандартный</i></button> <button value="2"><i>Средний</i></button> <button value="3"><i>Большой</i></button></div><div class="special-line-height"><span>Интервал между строками:</span> <button value="1"><i>Стандартный<br/>интервал</i></button> <button value="2"><i>Полуторный<br/>интервал</i></button> <button value="3"><i>Двойной<br/>интервал</i></button></div><h2>Выбор цветовой схемы:</h2><div class="special-color"><button value="1"><i>Черным<br/>по белому</i></button> <button value="2"><i>Белым<br/>по черному</i></button> <button value="3"><i>Темно-синим<br/>по голубому</i></button> <button value="4"><i>Коричневым<br/>по бежевому</i></button> <button value="5"><i>Зеленым<br/>по темно-коричневому</i></button></div><hr/><div class="special-reset"><button><i>Параметры по умолчанию</i></button></div><div class="special-settings-close"><button><i>Закрыть</i></button></div><div class="avtor"></div></div></div>';
+})
+

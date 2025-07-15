@@ -34,6 +34,8 @@
         @include('templates.footer')
     </footer>
 </div>
+<script src="/uhpv/js/uhpv.js" defer></script>
+
 </body>
 </html>
 
