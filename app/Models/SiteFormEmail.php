@@ -11,6 +11,8 @@ class SiteFormEmail extends Model
     protected $fillable = [
 
         'params',
+        'worked',
+        'message',
 ];
 
 

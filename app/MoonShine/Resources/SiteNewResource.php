@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
-use App\Models\Institute;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\SiteNew;
@@ -91,7 +90,6 @@ class SiteNewResource extends ModelResource
                         ]),
 
                         Collapse::make('Анонс', [
-
                             Image::make(__('Изображение'), 'img')
                                 ->dir('site_new')
                                 ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
