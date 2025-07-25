@@ -71,6 +71,7 @@ use App\MoonShine\Resources\ManagerResource;
 use App\MoonShine\Resources\ROPResource;
 use App\MoonShine\Resources\UserAccreditationResource;
 use App\MoonShine\Resources\ReviewResource;
+use App\MoonShine\Resources\SiteFormEmailResource;
 
 final class AxeldLayout extends AppLayout
 {
@@ -102,6 +103,10 @@ final class AxeldLayout extends AppLayout
 
             ]),
 
+            MenuGroup::make(static fn() => __('Письма'), [
+                MenuItem::make('Форма отправки', SiteFormEmailResource::class, 'envelope'),
+
+            ]),
 
             MenuGroup::make('Новости', [
                 MenuItem::make('Главная', SiteNewPage::class, 'sun'),

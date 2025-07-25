@@ -16,6 +16,7 @@ class SiteNewController extends Controller
             'items' => $items
         ]);
     }
+
     public  function site_new($slug) {
         $item = SiteNewViewModel::make()->site_new($slug);
 

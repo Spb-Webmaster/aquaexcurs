@@ -18,6 +18,7 @@ use App\MoonShine\Resources\PageResource;
 use App\MoonShine\Resources\ContactResource;
 use App\MoonShine\Resources\SiteNewResource;
 use App\MoonShine\Resources\ReviewResource;
+use App\MoonShine\Resources\SiteFormEmailResource;
 
 class MoonShineServiceProvider extends ServiceProvider
 {
@@ -36,6 +37,7 @@ class MoonShineServiceProvider extends ServiceProvider
                 ContactResource::class,
                 SiteNewResource::class,
                 ReviewResource::class,
+                SiteFormEmailResource::class,
             ])
             ->pages([
                 ...$config->getPages(),

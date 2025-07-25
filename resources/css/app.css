@@ -4,6 +4,7 @@
 @import "@fontsource/rambla";
 
 @import "./menu/menu.css";
+@import "./form/loader.css";
 @import "./layouts/about_company.css";
 @import "./layouts/home_img.css";
 @import "./layouts/home_img2.css";

@@ -205,7 +205,7 @@ marquee {
 .special-color-2 *, #special .special-color button[value='2'] {
     color: #FFF !important;
     background: #000 !important;
-    border-color: #FFF ! importan
+    border-color: #FFF !important;
 }
 
 .special-color-3 *, #special .special-color button[value='3'] {

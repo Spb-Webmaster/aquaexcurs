@@ -68,7 +68,10 @@
 <x-modal.modal-private-excursion
     id="book-modal"
     title="Заказать тур"
-    subtitle="Заполните форму отправки сообщения"/>
+    subtitle="Заполните форму отправки сообщения"
+    titleresponse="Спасибо"
+    subtitleresponse="Форма отправлена"
+/>
 
 
 

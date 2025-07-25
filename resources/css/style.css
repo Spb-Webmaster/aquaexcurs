@@ -98,6 +98,9 @@
         peer-not-placeholder-shown:text-gray-500
         dark:peer-not-placeholder-shown:text-neutral-500;
   }
+  .custom-input-error {
+    @apply border-1 border-solid border-red-600;
+  }
 }
 /* ... */
 

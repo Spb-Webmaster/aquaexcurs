@@ -83,17 +83,21 @@ class SettingPage extends Page
 
                                         Text::make('Название в логотипе', 'title_logo')->default((isset($title_logo)) ? $title_logo : ''),
                                         Textarea::make('Слоган', 'slogan')->default((isset($slogan)) ? $slogan : ''),
+                                        Textarea::make('Полный Адрес', 'address')->default((isset($address)) ? $address : ''),
+                                        Text::make('Адрес по частям', 'address_light1')->default((isset($address_light1)) ? $address_light1 : ''),
+                                        Text::make('Адрес по частям', 'address_light2')->default((isset($address_light2)) ? $address_light2 : ''),
 
 
                                     ]),
                                     Divider::make('Соц.сети'),
 
                                     Box::make([
-                                        Text::make('FaceBook', 'facebook')->default((isset($facebook)) ? $facebook : ''),
+                                        Text::make('Vk', 'vk')->default((isset($vk)) ? $vk : ''),
+                   /*                     Text::make('FaceBook', 'facebook')->default((isset($facebook)) ? $facebook : ''),
                                         Text::make('YouTube', 'youtube')->default((isset($youtube)) ? $youtube : ''),
                                         Text::make('Instagram', 'instagram')->default((isset($instagram)) ? $instagram : ''),
                                         Text::make('WhatsApp', 'whatsapp')->default((isset($whatsapp)) ? $whatsapp : ''),
-                                        Text::make('Telegram', 'telegram')->default((isset($telegram)) ? $telegram : ''),
+                                        Text::make('Telegram', 'telegram')->default((isset($telegram)) ? $telegram : ''),*/
                                     ]),
 
 

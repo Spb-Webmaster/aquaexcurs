@@ -2,11 +2,10 @@
 
     'name' => $name,
     'need' => false,
-    'type' => 'text',
     'title' => $title
 
 ])
-<textarea type="{{ $type }}" id="input-{{ $name }}"
+<textarea  id="input-{{ $name }}"
        name="{{ $name }}"
        class="custom-input peer"
        placeholder=""></textarea>
