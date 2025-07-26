@@ -89,8 +89,7 @@ class PrivateExcursion extends Component
 
             PrivateExcursionEvent::dispatch($data);
 
-            //Store into your table using Laravel model you've created
-            $record = SiteFormEmail::create(["params" => json_encode($data)]);
+           SiteFormEmail::create(["params" => json_encode($data)]);
 
         }
 
