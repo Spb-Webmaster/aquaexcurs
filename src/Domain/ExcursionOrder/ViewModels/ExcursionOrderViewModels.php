@@ -196,7 +196,7 @@ class ExcursionOrderViewModels
         $orders = $this->Calculate($excursion_id);
         $ticket = [];
         foreach ($orders as $k => $order) {
-            $ticket[$k]['number'] = $order['series'] . ' '. $order['number'];
+            $ticket[$k]['number'] = $order['series'] . ' ' . $order['number'];
             $ticket[$k]['quantity'] = $order['quantity'];
             $ticket[$k]['price'] = price($order['price']) . ' ' . config('currency.currency.RUB');
         }
@@ -209,9 +209,11 @@ class ExcursionOrderViewModels
     public function quantityTicketsCalculation(int $excursion_id): array
     {
         $orders = $this->Calculate($excursion_id);
-        $totalPlaces =  0;
-        foreach ($orders as $k => $order) {
-            $totalPlaces += $order['quantity'];
+        $totalPlaces = 0;
+        if (count($orders)) {
+            foreach ($orders as $k => $order) {
+                $totalPlaces += $order['quantity'];
+            }
         }
         $real_ticket = ExcursionViewModel::make()->saveTicketLimit($excursion_id, $totalPlaces);
         return [
@@ -221,7 +223,7 @@ class ExcursionOrderViewModels
     }
 
 
-    public function Calculate($excursion_id):?array
+    public function Calculate($excursion_id): ?array
     {
         // Определяем начало сегодняшнего дня (полночь)
         $startOfToday = Carbon::today();
@@ -236,7 +238,6 @@ class ExcursionOrderViewModels
             ->get()
             ->toArray(); // Преобразуем коллекцию в обычный PHP-массив
     }
-
 
 
 }

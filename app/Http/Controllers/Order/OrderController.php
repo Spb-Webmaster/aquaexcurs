@@ -84,7 +84,7 @@ class OrderController extends Controller
 
             /** Нет оплаты, идем далее без оплаты  */
             return view('orders.order_result_payment', [
-                'order' => (isset($order))?$order->toArray():null,
+                'order' => $order->toArray(),
             ]);
         }
 
