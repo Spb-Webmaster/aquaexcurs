@@ -97,6 +97,15 @@ main.excursion {
 
             }
 
+            .ex_time__time {
+                span {
+                    color: $colorGrey;
+                    font-size: 12px;
+                    display: block;
+                    padding: 0 0 0 3px;
+                }
+            }
+
             .ex_time__time,
             .ex_place {
                 font-size: 22px;

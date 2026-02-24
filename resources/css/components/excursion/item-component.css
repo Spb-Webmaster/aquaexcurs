@@ -59,6 +59,12 @@ main.excursion .excursion__title .subtitle {
   font-size: 16px;
   font-weight: 600;
 }
+.excursion_item .excursion_item__flex .excursion_item__left .ex_time__time span {
+  color: #667085;
+  font-size: 12px;
+  display: block;
+  padding: 0 0 0 3px;
+}
 .excursion_item .excursion_item__flex .excursion_item__left .ex_time__time,
 .excursion_item .excursion_item__flex .excursion_item__left .ex_place {
   font-size: 22px;

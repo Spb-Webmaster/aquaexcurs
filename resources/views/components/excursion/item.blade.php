@@ -62,7 +62,7 @@
                         <div class="ex_time">
                             <div class="ex_time__time-label"><span>Время отправления</span><span class="display_none">Время</span>
                             </div>
-                            <div class="ex_time__time">{{ $item->departure_time }}</div>
+                            <div class="ex_time__time">{!!  $item->departure_time !!}</div>
                         </div>
 
                         <div class="ex_places">
