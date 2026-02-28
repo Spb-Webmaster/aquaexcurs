@@ -18,13 +18,21 @@ class ExcursionViewModel
 
     public function excursions():Collection  | null
     {
-       return Cache::rememberForever('excursions', function ()  {
 
-           return Excursion::query()
-                ->where('published', 1)
-                ->orderBy('sorting', 'desc')
-                ->get();
-        });
+           if(auth()->check()) {
+               /** если есть авторизация, то показываем тестовые экскурсии */
+               return Excursion::query()
+                   ->where('published', 1)
+                   ->orderBy('sorting', 'desc')
+                   ->get();
+           } else {
+               /** если нет авторизации, то тестовые экскурсии не показываем */
+               return Excursion::query()
+                   ->where('published', 1)
+                   ->where('test', 0)
+                   ->orderBy('sorting', 'desc')
+                   ->get();
+           }
 
     }
 
@@ -35,6 +43,14 @@ class ExcursionViewModel
 
         if($slug) {
             $q->where('slug', $slug);
+        }
+
+        if(auth()->check()) {
+            /** если есть авторизация, то показываем тестовые экскурсии */
+            $q->where('test', 1);
+        } else {
+            /** если нет авторизации, то тестовые экскурсии не показываем */
+            $q->where('test', 0);
         }
 
         $q->where('published', 1);

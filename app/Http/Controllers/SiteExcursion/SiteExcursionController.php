@@ -10,7 +10,10 @@ class SiteExcursionController extends Controller
 
     public function site_excursion($slug) {
 
+
         $item = ExcursionViewModel::make()->excursion($slug);
+
+
         if(!$item) {
             abort(404);
         }

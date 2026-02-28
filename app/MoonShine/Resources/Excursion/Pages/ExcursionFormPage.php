@@ -104,6 +104,8 @@ class ExcursionFormPage extends FormPage
                                 ->format("d.m.Y")
                                 ->default(now()->toDateTimeString())
                                 ->sortable(),
+                            Switcher::make('ТЕСТИРОВАНИЕ', 'test')->default(0)->hint('Этот пункт разрешает тестировать только зарегистрированным. Тестирует только админ или менеджер сайта. Если не уверены не включайте эту опцию! '),
+
                         ]),
                         Collapse::make('Продажа билетов', [
                             Switcher::make('Продажа включена', 'price_hide')->default(1)->hint('(Выключая эту опцию, продажа билетов прекращается)'),
