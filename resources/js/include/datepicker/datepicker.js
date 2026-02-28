@@ -26,6 +26,7 @@ export function datepicker_excursion_date() {
 
         const today = new Date(); // Получаем сегодняшнюю дату
         const dates = JSON.parse(elem.dataset.dates); // Преобразуем JSON обратно в массив
+
         // Получаем текущую дату
         let now = moment();
         const Y = now.format('YYYY')

@@ -13,6 +13,7 @@ class FancyBoxController extends Controller
     public function fancybox(Request $request):View
     {
 
+
         if($request->template == 'call_me') {
             return view('fancybox.forms.call_me');
         }
@@ -27,6 +28,8 @@ class FancyBoxController extends Controller
 
 
         if($request->template == 'order_excursion') {
+
+
             $jsonData = json_decode($request->data);
             $item  = null;
             if ($jsonData && isset($jsonData->excursion_id)) {
@@ -34,6 +37,7 @@ class FancyBoxController extends Controller
                 $excursion_id = $jsonData->excursion_id;
                 /** Получим экскурсию **/
                 $item = Excursion::find($excursion_id);
+
             }
 
             return view('fancybox.forms.order_excursion', [
