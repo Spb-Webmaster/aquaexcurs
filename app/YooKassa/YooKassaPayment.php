@@ -13,7 +13,7 @@ class YooKassaPayment
     protected $apiKey = 'live_Etiqe7a7gG7Si90u5ZGwuZK2pS3PBhrUgbk9BTZJSOI';
 
 /*    protected $shopId = '1282712';
-    protected $apiKey = 'test_tTs8kil8G_rrbUuDqfRY_ug5QMIVARPI6nYIzqkNUJw';*/
+      protected $apiKey = 'test_tTs8kil8G_rrbUuDqfRY_ug5QMIVARPI6nYIzqkNUJw';*/
 
     public function getRedirect($order) :string|bool
     {
@@ -46,6 +46,19 @@ class YooKassaPayment
                             'full_name' => ($order['username'])?? '',
                             'email' => ($order['email'])??'',
                             'phone' => ($order['phone'])??'',
+                        ],
+                        'items' => [
+                            [
+                                'description' => "Заказ {$series_number}",
+                                'quantity' => 1,
+                                'amount' => [
+                                    'value' => trim($order['order']['total_price']),
+                                    'currency' => 'RUB',
+                                ],
+                                "vat_code" => 2,
+                                "payment_mode" => "full_prepayment",
+                                "payment_subject" => "commodity"
+                            ],
                         ],
 
                     ],
