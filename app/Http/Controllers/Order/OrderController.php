@@ -41,7 +41,6 @@ class OrderController extends Controller
         if (is_null($order)) {
             return redirect()->route('home');
         }
-
         return view('orders.order', [
             'order' => $order
         ]);
@@ -50,6 +49,7 @@ class OrderController extends Controller
 
     public function finalRequest(OrderExcursionRequest $request):View|RedirectResponse
     {
+
         /** Запишем данные в базу и вернем данные */
         $order = ExcursionOrderViewModels::make()->saveOrderStepOne($request);
         /** Сохраним данные заказа в сессию */

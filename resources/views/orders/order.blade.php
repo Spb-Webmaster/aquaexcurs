@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 <x-seo.meta
-        title=""
-        description=""
-        keywords=""
+    title=""
+    description=""
+    keywords=""
 />
 @section('content')
 
@@ -39,44 +39,50 @@
                     <div class="order__left">
                         <div class="form_data  pad_b16">
                             <x-form
-                                    :action="route('final_request')"
+                                :action="route('final_request')"
                             >
                                 <x-form.form-input
-                                        name="username"
-                                        type="text"
-                                        :label="config('site.mail.username')"
-                                        value="{{ old('username')?:'' }}"
-                                        required="{{ true }}"
+                                    name="username"
+                                    type="text"
+                                    :label="config('site.mail.username')"
+                                    value="{{ old('username')?:'' }}"
+                                    required="{{ true }}"
 
                                 />
                                 <x-form.form-input
-                                        name="phone"
-                                        type="tel"
-                                        :label="config('site.mail.phone')"
-                                        class="imask"
-                                        value="{{ old('phone')?:'' }}"
-                                        required="{{ true }}"
+                                    name="phone"
+                                    type="tel"
+                                    :label="config('site.mail.phone')"
+                                    class="imask"
+                                    value="{{ old('phone')?:'' }}"
+                                    required="{{ true }}"
                                 />
                                 <x-form.form-input
-                                        name="email"
-                                        type="email"
-                                        :label="config('site.mail.email')"
-                                        class=""
-                                        value="{{ old('email')?:'' }}"
+                                    name="email"
+                                    type="email"
+                                    :label="config('site.mail.email')"
+                                    class=""
+                                    value="{{ old('email')?:'' }}"
                                 />
 
-                                <x-form.form-input-datepicker
+                                @if($order['open_date'])
+                                    {{ rusdate3($order['open_date']) }}
+                                    <input type="hidden" name="excursion_date" value="{{ $order['open_date'] }}"/>
+                                @else
+                                    <x-form.form-input-datepicker
                                         name="excursion_date"
-                                        :label="config('site.mail.excursion_date')"
                                         value="{{ (old('excursion_date'))?: '' }}"
-                                />
+                                        :label="config('site.mail.excursion_date')"
+                                        :dates="json_encode($order['closed_date'])"
+                                    />
+                                @endif
 
                                 <x-form.form-checkbox
                                     name="offer"
                                     value="1"
-                                        class="offer-agreement"
-                                        :checked="false"
-                                        title="{!! config2('moonshine.setting.offer') !!}"
+                                    class="offer-agreement"
+                                    :checked="false"
+                                    title="{!! config2('moonshine.setting.offer') !!}"
 
                                 />
 
@@ -108,11 +114,11 @@
                                                         </div>
                                                         <div class="py-1"></div>
                                                         <div class="ci_item_1"><span
-                                                                    class="">{{ $item['price'] }}</span> {{ config('currency.currency.RUB') }}
+                                                                class="">{{ $item['price'] }}</span> {{ config('currency.currency.RUB') }}
                                                             x <span class="">{{ $item['count'] }}</span> чел.
                                                         </div>
                                                         <div class="ci_item_2"><span
-                                                                    class="">{{ $item['total_price'] }}</span> {{ config('currency.currency.RUB') }}
+                                                                class="">{{ $item['total_price'] }}</span> {{ config('currency.currency.RUB') }}
                                                         </div>
 
                                                     </div>

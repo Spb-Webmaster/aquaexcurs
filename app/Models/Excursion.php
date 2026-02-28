@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -60,7 +61,9 @@ class Excursion extends Model
         'dont_register_form',
         'series',
         'rent_text',
-        'html'
+        'html',
+        'closed_date',
+        'open_date'
     ];
 
 
@@ -70,6 +73,7 @@ class Excursion extends Model
         'gallery' => 'collection',
         'list_points' => 'collection',
         'route' => 'collection',
+        'closed_date' => 'collection',
     ];
 
     //
@@ -78,11 +82,13 @@ class Excursion extends Model
         return $this->belongsToMany(FleetSpeedboat::class)->where('published', 1)->orderBy('sorting', 'desc');
 
     }
+
     public function FleetShip(): BelongsToMany
     {
         return $this->belongsToMany(FleetShip::class)->where('published', 1)->orderBy('sorting', 'desc');
 
     }
+
     public function FleetSchoolboy(): BelongsToMany
     {
         return $this->belongsToMany(FleetSchoolboy::class)->where('published', 1)->orderBy('sorting', 'desc');
@@ -122,7 +128,7 @@ class Excursion extends Model
     public function getRemainingTicketsAttribute(): string
     { // remaining tickets - остаток билетов
 
-return '';
+        return '';
     }
 
     public function get_gallery(): array
@@ -142,8 +148,22 @@ return '';
         return [];
     }
 
+    public function getDatesAttribute(): array
+    {
+        if ($this->closed_date) {
+            $formatedDate = [];
+            foreach ($this->closed_date as $j_date) {
+                $date = Carbon::createFromFormat('Y-m-d', $j_date['json_date']); // Создаем объект Carbon из строки
+                $formatedDate[] = $date->format('d.m.Y'); // Форматируем дату в нужном формате
+            }
+            return $formatedDate;
 
-    protected static function boot():void
+        }
+
+        return [];
+    }
+
+    protected static function boot(): void
     {
         parent::boot();
 
@@ -153,8 +173,7 @@ return '';
         });
 
         # Выполняем действия после сохранения
-        static::saved(function()
-        {
+        static::saved(function () {
             cache_clear();
 
         });

@@ -72,6 +72,8 @@ class ExcursionOrderViewModels
             'total_count' => $totalCount,
             'total_price' => $totalPrice,
             'items' => $human,
+            'closed_date' => closed_date($exc['closed_date']),
+            'open_date' => open_date($exc['open_date']),
         ];
 
 

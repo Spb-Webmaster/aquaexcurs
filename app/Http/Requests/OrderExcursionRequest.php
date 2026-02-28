@@ -3,7 +3,10 @@
 namespace App\Http\Requests;
 
 use Carbon\Carbon;
+use Domain\ExcursionOrder\ViewModels\ExcursionOrderViewModels;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Session\Session as SessionContract;
+
 
 class OrderExcursionRequest extends FormRequest
 {
@@ -13,7 +16,7 @@ class OrderExcursionRequest extends FormRequest
         return true;
     }
 
-    protected function prepareForValidation():void
+    protected function prepareForValidation(): void
     {
         $this->merge([
             'email' => str(request('email'))
@@ -32,10 +35,22 @@ class OrderExcursionRequest extends FormRequest
             'phone' => ['required', 'string', 'min:6', 'max:100'],
             'email' => ['required', 'string', 'email', 'max:100', 'nullable'],
             'offer' => ['required'],
-            'excursion_date' => ['required', 'date_format:d.m.Y'], // Правило date_format заменено на date_format:d.m.Y
+            'excursion_date' => ['required',
+                'date_format:d.m.Y',
+                function ($attribute, $value, $fail) {
+                    // Извлекаем действительную дату из сессии
+                    $order = ExcursionOrderViewModels::make()->getSession(config('site.constants.tour_data'));
+                    if ($order['open_date']) {
+                        // Проверяем совпадение введённой даты с той, что была ранее записана в сессию
+                        if ($value !== $order['open_date']) {
+                            $fail("Дата экскурсии установлена не верно");
+                        }
+                    }
+                },
+                //open_date
+            ], // Правило date_format заменено на date_format:d.m.Y
         ];
     }
-
 
 
     /**

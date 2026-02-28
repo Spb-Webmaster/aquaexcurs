@@ -594,5 +594,39 @@ if (!function_exists('logErrors')) {
 
 
 
+if (!function_exists('closed_date')) {
+
+    function closed_date(?array $array):array
+    {
+        if ($array) {
+            $formatedDate = [];
+            foreach ($array as $j_date) {
+                $date = Carbon::createFromFormat('Y-m-d', $j_date['json_date']); // Создаем объект Carbon из строки
+                $formatedDate[] = $date->format('d.m.Y'); // Форматируем дату в нужном формате
+            }
+            return $formatedDate;
+
+        }
+
+        return [];
+    }
+}
+if (!function_exists('open_date')) {
+
+    function open_date(?string $date):string
+    {
+        if ($date) {
+
+            $d = Carbon::createFromFormat('Y-m-d', $date); // Создаем объект Carbon из строки
+            return $d->format('d.m.Y'); // Форматируем дату в нужном формате
+
+        }
+
+        return '';
+    }
+}
+
+
+
 
 

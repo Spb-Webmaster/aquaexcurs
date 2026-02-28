@@ -19,7 +19,6 @@ import {content_faq} from "./include/site/content_faq";
 
 document.addEventListener('DOMContentLoaded', function () {
 
-
     imask() // маска на поле input input[name="phone"]
    /* tooltip() // tooltip */
     hamburger() // открытие и закрытие верхнего меню
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     uploadAvatar() // отправляем аватар пользователя
     blind()
     add_sum() // добавить количество людей и пересчитать сумму
-    datepicker_excursion_date() // дата желаемая для экскурсии
     content_faq() // faq
+    datepicker_excursion_date() // дата желаемая для экскурсии
 
 });

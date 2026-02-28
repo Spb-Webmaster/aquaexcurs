@@ -75,6 +75,15 @@ class ExcursionFormPage extends FormPage
                             Textarea::make('Карта яндекс', 'yandex_map')->nullable()   ->unescape(),
 
                         ]),
+                        Collapse::make('Даты', [
+
+                       Date::make('Дата для продажи', 'open_date')->format("d.m.Y")->hint('Если указана дата, то остальные даты игнорируются. Календаря выбора даты экскурсии не будет. Все записываются только на определенную дату.'),
+
+                       Json::make('Закрытые даты', 'closed_date')->fields([
+                           Date::make('Дата для продажи', 'json_date')->format("d.m.Y")
+                            ])->vertical()->creatable(limit: 100)
+                                ->removable(),
+                            ]),
 
                     ])->columnSpan(6),
                     Column::make([
@@ -105,7 +114,7 @@ class ExcursionFormPage extends FormPage
                         ]),
                         Collapse::make('Макет - отправить заявку', [
                             Switcher::make('Только заявка', 'dont_register')->default(0)->hint('(Выключая эту опцию, экскурсия не оформляется и не оплачивается. Происходит только оформление заявки на email)'),
-                            Text::make('Цена от', 'dont_register_prefix_price')->default('От'),
+                            Text::make('Цена от', 'dont_register_prefix_price'),
                             Number::make('Цена', 'dont_register_price')->nullable(),
                             Text::make('Подпись под ценой', 'dont_register_desc')->nullable(),
                             Text::make('Надпись на кнопке', 'dont_register_button')->unescape(),

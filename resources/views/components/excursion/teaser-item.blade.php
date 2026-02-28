@@ -32,21 +32,27 @@
                 {{--Не продаем--}}
                 <div class="excursion_item__price">
 
-                    @if($item->dont_register_price)
+                    @if($item->dont_register_price) {{--указали цену --}}
                         <div class="__price">
                             <span><i>{{ ($item->dont_register_prefix_price)??'' }}</i>{{ price($item->dont_register_price) }}</span>
                             <span
                                 class="__current">{{ config('currency.currency.RUB') }}</span>
                             <div class="display_1024">{!! $item->dont_register_desc !!}</div>
                         </div>
-
-                        <div class="__buy"><a class="btn open-fancybox" data-form="{{ $item->dont_register_form }}" data-transfer='{"excursion_id": {{$item->id}}}'
-                                              href="#"><span>{{ $item->dont_register_button }}</span></a>
-                        </div>
+                        @if( $item->dont_register_button ){{--название кнопки--}}
+                            <div class="__buy"><a class="btn open-fancybox" data-form="{{ $item->dont_register_form }}"
+                                                  data-transfer='{"excursion_id": {{$item->id}}}'
+                                                  href="#"><span>{{ $item->dont_register_button }}</span></a>
+                            </div>
+                        @endif
                     @else
-                        <div class="__buy_100"><a class="btn open-fancybox" data-form="{{ $item->dont_register_form }}" data-transfer='{"excursion_id": {{$item->id}}}'
-                                              href="#"><span>{{ $item->dont_register_button }}</span></a>
-                        </div>
+                        @if( $item->dont_register_button) {{--название кнопки--}}
+                            <div class="__buy_100"><a class="btn open-fancybox"
+                                                      data-form="{{ $item->dont_register_form }}"
+                                                      data-transfer='{"excursion_id": {{$item->id}}}'
+                                                      href="#"><span>{{ $item->dont_register_button }}</span></a>
+                            </div>
+                        @endif
                     @endif
 
                 </div>
@@ -65,12 +71,12 @@
                             — {{ ($item->price_pier)?:$item->price }} {{ config('currency.currency.RUB') }}</div>
                     </div>
                     @if($item->price_hide)
-                    <div class="__buy">
+                        <div class="__buy">
                             <a class="btn"
                                href="{{ route('site_excursion', ['slug' => $item->slug ]) }}">
                                 <span>Купить</span>
                             </a>
-                    </div>
+                        </div>
                     @endif
                 </div>
                 <div class="excursion_item__pier">
