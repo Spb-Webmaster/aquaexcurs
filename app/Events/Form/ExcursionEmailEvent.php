@@ -11,7 +11,7 @@ class ExcursionEmailEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public ?object $request;
+    public ?array $request;
     /**
      * Create a new event instance.
      * Создайте новый экземпляр события.

@@ -88,6 +88,10 @@ class OrderController extends Controller
             /** Клиенту */
             ExcursionOrderUserEvent::dispatch($order);
 
+            /** Отправим на почту */
+            /** Админу */
+            ExcursionOrderAdminEvent::dispatch($order);
+
             /** Нет оплаты, идем далее без оплаты  */
             return view('orders.order_result_payment', [
                 'order' => $order->toArray(),
@@ -134,7 +138,7 @@ class OrderController extends Controller
 
                     /** Отправим на почту */
                     /** Админу */
-                //   ExcursionOrderAdminEvent::dispatch($order);
+                  ExcursionOrderAdminEvent::dispatch($order);
 
                 }
 
