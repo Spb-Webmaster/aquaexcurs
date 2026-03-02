@@ -1,21 +1,15 @@
 <?php
 
-use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Intervention\Image\Exceptions\NotWritableException;
 use Intervention\Image\Laravel\Facades\Image;
 use Support\Flash\Flash;
 use Illuminate\Support\Facades\Route;
-use \Support\Traits\Upload;
-use \Support\Traits\GeneratePDF;
+;
 
 if (!function_exists('flash')) {
 

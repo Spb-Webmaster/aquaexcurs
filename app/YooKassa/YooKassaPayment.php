@@ -55,7 +55,7 @@ class YooKassaPayment
                                     'value' => trim($order['order']['total_price']),
                                     'currency' => 'RUB',
                                 ],
-                                "vat_code" => 2,
+                                "vat_code" => 7,
                                 "payment_mode" => "full_prepayment",
                                 "payment_subject" => "commodity"
                             ],

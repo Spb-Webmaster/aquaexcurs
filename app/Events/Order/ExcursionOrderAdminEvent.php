@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Events\Form;
+namespace App\Events\Order;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ExcursionEmailEvent
+class ExcursionOrderAdminEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public ?object $request;
+    public ?object $order;
     /**
      * Create a new event instance.
      * Создайте новый экземпляр события.
      */
-    public function __construct($request)
+    public function __construct($order)
     {
-        $this->request = $request;
+        $this->order = $order;
     }
 
 

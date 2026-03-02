@@ -65,8 +65,8 @@ class ExcursionOrderViewModels
         $data = [
             'id' => $request['id'],
             'title' => $exc['title'],
-            'series' => $exc['series'],
             'slug' => $exc['slug'],
+            'series' => $exc['series'],
             'sku' => $exc['sku'],
             'price' => $exc['price'],
             'total_count' => $totalCount,

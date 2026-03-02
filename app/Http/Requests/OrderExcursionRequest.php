@@ -40,7 +40,7 @@ class OrderExcursionRequest extends FormRequest
                 function ($attribute, $value, $fail) {
                     // Извлекаем действительную дату из сессии
                     $order = ExcursionOrderViewModels::make()->getSession(config('site.constants.tour_data'));
-                    if ($order['open_date']) {
+                    if ($order && $order['open_date']) {
                         // Проверяем совпадение введённой даты с той, что была ранее записана в сессию
                         if ($value !== $order['open_date']) {
                             $fail("Дата экскурсии установлена не верно");

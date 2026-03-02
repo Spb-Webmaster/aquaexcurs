@@ -45,10 +45,7 @@ class ExcursionViewModel
             $q->where('slug', $slug);
         }
 
-        if(auth()->check()) {
-            /** если есть авторизация, то показываем тестовые экскурсии */
-            $q->where('test', 1);
-        } else {
+        if(!auth()->check()) {
             /** если нет авторизации, то тестовые экскурсии не показываем */
             $q->where('test', 0);
         }

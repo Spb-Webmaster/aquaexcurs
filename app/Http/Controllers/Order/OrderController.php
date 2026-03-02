@@ -3,21 +3,19 @@
 namespace App\Http\Controllers\Order;
 
 use App\Enums\Payment\PaymentClient;
+use App\Events\Order\ExcursionOrderAdminEvent;
+use App\Events\Order\ExcursionOrderUserEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderExcursionRequest;
 use App\Models\ExcursionOrder;
 use App\Send1C\OrderProcessing;
 use App\YooKassa\YooKassaPayment;
 use Domain\ExcursionOrder\ViewModels\ExcursionOrderViewModels;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Log;
 use Support\PDF\ReplaceText;
 use YooKassa\Model\Notification\NotificationEventType;
-use YooKassa\Model\Notification\NotificationSucceeded;
-use YooKassa\Model\Notification\NotificationWaitingForCapture;
 
 class OrderController extends Controller
 {
@@ -66,7 +64,6 @@ class OrderController extends Controller
             }
         }
 
-
         if(config2('moonshine.setting.payment') == PaymentClient::NULL->value) {
             /** получить данные сессии по ключу из прошлого шага */
             $order_session = ExcursionOrderViewModels::make()->getSession(config('site.constants.excursion_order'));
@@ -79,8 +76,17 @@ class OrderController extends Controller
                 return view('orders.order_result_error', []);
             }
 
+
+            /** Создадим PDF */
+            ReplaceText::make()->replaceText($order->toArray());
+
             /** Пересчитаем количество билетов */
             ExcursionOrderViewModels::make()->quantityTicketsCalculation($order->excursion_id);
+
+
+            /** Отправим на почту */
+            /** Клиенту */
+            ExcursionOrderUserEvent::dispatch($order);
 
             /** Нет оплаты, идем далее без оплаты  */
             return view('orders.order_result_payment', [
@@ -121,6 +127,15 @@ class OrderController extends Controller
 
                     /** Пересчитаем количество билетов */
                     ExcursionOrderViewModels::make()->quantityTicketsCalculation($order->excursion_id);
+
+                    /** Отправим на почту */
+                    /** Клиенту */
+                    ExcursionOrderUserEvent::dispatch($order);
+
+                    /** Отправим на почту */
+                    /** Админу */
+                //   ExcursionOrderAdminEvent::dispatch($order);
+
                 }
 
 /*              Log::info($requestBody['object']['metadata']['orderId']); // в логи
