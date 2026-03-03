@@ -363,6 +363,55 @@ main.excursion {
 
 }
 
+/** скачать PDF файл  */
+
+ .content_files_pdf {
+     padding:30px 0 10px 0;
+     display: flex;
+     gap: 30px;
+
+     .content_file {
+
+         box-sizing: border-box;
+         text-decoration: none;
+
+         .flex {
+             border-radius: 8px;
+             display: flex;
+             height: 52px;
+             padding: 10px;
+             background: #00000008;
+             transition: 0.2s;
+
+             .left {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+             }
+
+
+             .right {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 color: #0870D8;
+                 font-size: 14px;
+                 padding: 0 10px;
+             }
+
+         }
+         &:hover {
+             .flex {
+                 background: #EEEEEE;
+             }
+         }
+     }
+ }
+
+/** скачать PDF файл  */
+
+
+
 @media screen and (max-width: 568px) {
     .excursion_item {
         .excursion_item__flex {

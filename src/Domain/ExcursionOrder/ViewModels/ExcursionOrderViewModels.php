@@ -242,4 +242,11 @@ class ExcursionOrderViewModels
     }
 
 
+    public function orderId($id): ?ExcursionOrder
+    {
+        return ExcursionOrder::find($id);
+
+    }
+
+
 }

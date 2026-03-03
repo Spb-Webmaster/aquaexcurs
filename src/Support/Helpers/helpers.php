@@ -620,6 +620,14 @@ if (!function_exists('open_date')) {
     }
 }
 
+if (!function_exists('ticketFilePDFName')) {
+
+    function ticketFilePDFName(?string $number, ?string $created_at):?string
+    {
+       return'ticket-' . $number . '--' . Carbon::parse($created_at)->format('d-m-Y--H-i')  . '.pdf';
+    }
+}
+
 
 
 

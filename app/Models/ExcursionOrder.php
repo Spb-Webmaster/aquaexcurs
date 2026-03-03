@@ -32,6 +32,8 @@ class ExcursionOrder extends Model
         'order' => 'collection',
         'notification_yoo_kassa' => 'collection',
         'ticket' => TicketCast::class,
+    /*    'created_at' => 'datetime',*/
+
     ];
 
     public function Excursion(): BelongsTo

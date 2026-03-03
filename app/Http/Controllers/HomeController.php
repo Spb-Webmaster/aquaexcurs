@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Domain\ExcursionOrder\ViewModels\ExcursionOrderViewModels;
+use Illuminate\Contracts\View\View;
+
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index():View
     {
         //flash()->info('Hello');
         if(auth()->check()) {
@@ -15,6 +16,11 @@ class HomeController extends Controller
         } else {
             $user = false;
         }
+
+     /*  $o =  ExcursionOrderViewModels::make()->orderId(276);
+        $formatedDateTime = $o->created_at->format('d-m-Y--H-i');*/
+
+
 
        return view('home', [
            'user' => $user,

@@ -235,6 +235,42 @@ main.excursion .excursion__title .subtitle {
     display: none;
   }
 }
+/** скачать PDF файл  */
+.content_files_pdf {
+  padding: 30px 0 10px 0;
+  display: flex;
+  gap: 30px;
+}
+.content_files_pdf .content_file {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.content_files_pdf .content_file .flex {
+  border-radius: 8px;
+  display: flex;
+  height: 52px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.031372549);
+  transition: 0.2s;
+}
+.content_files_pdf .content_file .flex .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_files_pdf .content_file .flex .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0870D8;
+  font-size: 14px;
+  padding: 0 10px;
+}
+.content_files_pdf .content_file:hover .flex {
+  background: #EEEEEE;
+}
+
+/** скачать PDF файл  */
 @media screen and (max-width: 568px) {
   .excursion_item .excursion_item__flex .excursion_item__left .ex_price__price {
     font-size: 32px;

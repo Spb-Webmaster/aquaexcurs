@@ -26,7 +26,7 @@
 
     @endforeach
 <div class="" style="color: #282828; font-size: 19px; padding: 10px 0 16px 0" >Итого: <span>{{ $order->price }} {{ config('currency.currency.RUB') }}</span></div>
-    <a target="_blank" href="{{asset(Storage::url('orders/pdf/files/ticket-'.$order->number.'.pdf'))}}" class="" style="    padding: 4px 16px;     color: #fff;     background: #dd3733;     font-weight: 600;    border-radius: 4px;     font-size: 19px;    margin-bottom: 20px;     display: inline-block;">Скачать PDF</a>
+    <a target="_blank" href="{{asset(Storage::url('orders/pdf/files/'. ticketFilePDFName($order->number, $order->created_at)))}}" class="" style="    padding: 4px 16px;     color: #fff;     background: #dd3733;     font-weight: 600;    border-radius: 4px;     font-size: 19px;    margin-bottom: 20px;     display: inline-block;">Скачать PDF</a>
 
 @endsection
 
