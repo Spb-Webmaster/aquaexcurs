@@ -81,14 +81,7 @@ class SettingPage extends Page
 
                                     ]),
 
-                                    Divider::make('Текущая информация'),
-
-                                    Box::make([
-                                        Text::make('Текущая информация', 'info')->default((isset($info)) ? $info : 'Текущая информация')->unescape(),
-
-                                        Textarea::make('Описание', 'info_desc')->default((isset($info_desc)) ? $info_desc : '')->unescape(),
-
-                                    ]),
+                          
                                     Divider::make('Соц.сети'),
 
                                     Box::make([

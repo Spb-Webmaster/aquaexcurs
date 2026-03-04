@@ -165,7 +165,7 @@
                 <div class="relative excursion_item__right_padding">
                     @if($item->pier)
                         <div class="relative pb-7">
-                            <h3 class="h3-rubik">Причал:</h3>
+                            <h3 class="h3-rubik">Причалы:</h3>
                             <p>{!!   $item->pier !!}</p>
                         </div>
                     @endif
