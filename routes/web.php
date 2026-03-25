@@ -119,7 +119,6 @@ Route::controller(SiteExcursionController::class)->group(function () {
 
 /** * Auth */
 Route::controller(SignInController::class)->group(function () {
-
     Route::get('/aqua-login', 'login')
         ->middleware(RedirectIfAuthenticated::class)
         ->name('login');

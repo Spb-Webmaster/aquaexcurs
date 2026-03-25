@@ -54,7 +54,8 @@
 .fleet__html .fl__tr .fl__flex .fl_super {
   line-height: 1.4em;
   position: relative;
-  color: #EF533F;
+  color: #282828;
+  font-weight: 600;
 }
 .fleet__html .fl__tr .flw_60 {
   width: 60%;

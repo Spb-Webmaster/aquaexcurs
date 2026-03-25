@@ -170,7 +170,6 @@ class ExcursionOrderViewModels
         }
     }
 
-
     public function setSessionExcursionOrder($order): bool
     {
         /**config('site.constants.excursion_order')  - название сессии **/
