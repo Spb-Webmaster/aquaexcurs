@@ -72,7 +72,7 @@
                     </div>
                     @if($item->price_hide)
                         <div class="__buy">
-                            <a onclick="ym(52202209,'reachGoal','gotocart')" class="btn"
+                            <a class="btn"
                                href="{{ route('site_excursion', ['slug' => $item->slug ]) }}">
                                 <span>Купить</span>
                             </a>
