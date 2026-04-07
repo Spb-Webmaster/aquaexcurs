@@ -14,7 +14,7 @@
             <div class="block_header__right">
                 <div class="header_phone_email_blind">
                     <div class="header_phone_email">
-                        <div class="header_phone"><a href="tel:+{{config2('moonshine.setting.phone')}}">{{ format_phone(config2('moonshine.setting.phone')) }}</a></div>
+                        <div class="header_phone"><a onclick="ym(52202209,'reachGoal','phone')" href="tel:+{{config2('moonshine.setting.phone')}}">{{ format_phone(config2('moonshine.setting.phone')) }}</a></div>
                         <div class="header_email">{{ config2('moonshine.setting.email') }}</div>
                     </div>
                     <x-blind.blind />

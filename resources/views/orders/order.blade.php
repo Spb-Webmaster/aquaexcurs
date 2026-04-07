@@ -88,7 +88,11 @@
 
 
                                 <div class="input-button pad_t20_important ">
-                                    <x-form.form-button class="w_265_px_important" type="submit">
+                                    @php $ymGoal = 'onclick="ym(52202209,\'reachGoal\',\'success\')"'; @endphp
+                                    <x-form.form-button
+                                        class="w_265_px_important"
+                                        :yandexmetrica="$ymGoal"
+                                        type="submit">
                                         Оплатить {{ price($order['total_price']) }} {{ config('currency.currency.RUB') }}
                                     </x-form.form-button>
                                 </div>
