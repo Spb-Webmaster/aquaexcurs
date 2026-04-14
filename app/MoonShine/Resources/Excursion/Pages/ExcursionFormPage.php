@@ -121,6 +121,7 @@ class ExcursionFormPage extends FormPage
                             Text::make('Подпись под ценой', 'dont_register_desc')->nullable(),
                             Text::make('Надпись на кнопке', 'dont_register_button')->unescape(),
                             Text::make('Шаблон формы', 'dont_register_form')->unescape(),
+                            Text::make('Почта получателя', 'dont_register_form_to_email')->unescape()->hint('Необязательное поле, если оставите пустым письмо отправится согласно настройкам по умолчанию'),
 
 
                         ]),

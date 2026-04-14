@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Excursion extends Model
 {
 
+
     protected $table = 'excursions';
 
     protected $fillable = [

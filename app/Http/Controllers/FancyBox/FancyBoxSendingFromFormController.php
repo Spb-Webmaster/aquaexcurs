@@ -30,6 +30,20 @@ class FancyBoxSendingFromFormController extends Controller
 
 
          ExcursionEmailViewModel::make()->save($request->validated());
+         ExcursionEmailEvent::dispatch($request->validated());
+
+     return response()->json([
+            'response' => $request->all(),
+        ], 200);
+
+    }
+
+    /** Заказ экскурсии для партнеров (НЕИСПОЛЬЗУЮТСЯ) */
+    public function fancyboxOrderExcursionMotorShip(OrderExcursionEmailRequest $request):?JsonResponse {
+
+
+
+         ExcursionEmailViewModel::make()->save($request->validated());
 
          ExcursionEmailEvent::dispatch($request->validated());
 

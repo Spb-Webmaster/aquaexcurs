@@ -45,6 +45,25 @@ class FancyBoxController extends Controller
             ]);
         }
 
+
+        if($request->template == 'order_excursion_motor-ship') {
+
+
+            $jsonData = json_decode($request->data);
+            $item  = null;
+            if ($jsonData && isset($jsonData->excursion_id)) {
+                /** Ключ существует, получаем значение **/
+                $excursion_id = $jsonData->excursion_id;
+                /** Получим экскурсию **/
+                $item = Excursion::find($excursion_id);
+
+            }
+
+            return view('fancybox.forms.order_excursion_motor-ship', [
+                'item' => $item
+            ]);
+        }
+
         return view('fancybox.forms.error.error_form');
 
     }

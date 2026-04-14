@@ -47,6 +47,7 @@ Route::controller(FancyBoxController::class)->group(function () {
 Route::controller(FancyBoxSendingFromFormController::class)->group(function () {
     Route::post('/call_me', 'fancyboxCallMe');
     Route::post('/order_excursion', 'fancyboxOrderExcursion');
+    Route::post('/order_excursion_motor-ship', 'fancyboxOrderExcursionMotorShip');
     Route::post('/edit_info', 'fancyboxEditInfo');
 
 });
