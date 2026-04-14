@@ -4,7 +4,7 @@
     <div class="modal_padding relative app_modal ">
         <div class="form_title">
             <div class="form_title__h1">Заказать обратный звонок</div>
-            <div class="form_title__h2">Укажите свой номер телефона, мы перезвоним вам в ближайшее время.</div>
+            <div class="form_title__h2">Укажите свой номер телефона, мы свяжемся с вами в ближайшее время.</div>
         </div>
         <div class="form_data app_form_data">
 
