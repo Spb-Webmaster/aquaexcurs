@@ -34,12 +34,16 @@ class ExcursionEmail extends Model
     /** Мутация атрибута для сохранения email-ов на которые была отправка **/
     public function setEmailsAttribute(): void
     {
-        if($this->dont_register_form_to_email) {
-            $this->attributes['emails'] =  $this->dont_register_form_to_email;
-        } else {
+        $excursionEmail = isset($this->attributes['excursion_id'])
+            ? Excursion::find($this->attributes['excursion_id'])
+            : null;
 
+        $customEmail = $excursionEmail?->dont_register_form_to_email;
+
+        if($customEmail) {
+            $this->attributes['emails'] = $customEmail;
+        } else {
             $this->attributes['emails'] = (count($this->emails())) ? implode(", ", $this->emails()) : 'Ошибка!!! Не найти email для отправки';
-            // logger()->info('Setting emails attribute:', ['emails' => $this->attributes['emails']]);
         }
     }
     /** Мутация атрибута для изменения формата даты **/
