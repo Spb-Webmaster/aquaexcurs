@@ -60,7 +60,7 @@
                     <div class="excursion_item__info-price">
 
                         <div class="ex_time">
-                            <div class="ex_time__time-label"><span>Время отправления</span><span class="display_none">Время</span>
+                            <div class="ex_time__time-label"><span>Начало посадки</span><span class="display_none">Время</span>
                             </div>
                             <div class="ex_time__time">{!!  $item->departure_time !!}</div>
                         </div>
@@ -179,7 +179,7 @@
 
                     @if($item->departure_time)
                         <div class="relative pb-7">
-                            <h3 class="h3-rubik">Время отправления:</h3>
+                            <h3 class="h3-rubik">Начало посадки на теплоход:</h3>
                             <p>{!!   $item->departure_time !!}</p>
                         </div>
                     @endif
