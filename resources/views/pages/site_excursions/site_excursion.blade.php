@@ -15,6 +15,7 @@
 
 <section class="relative">
     <div class="block relative">
+        <div class="item-{{$item->id}}">
         <div class="excursion__title">
         <h1 class="h1">
             {{ $item->title }}
@@ -23,6 +24,8 @@
             <div class="subtitle">{!! $item->subtitle  !!}</div>
         @endif
         </div>
+        </div>
+
        <x-excursion.item :item="$item" />
 
 
@@ -33,4 +36,14 @@
 
 </main>
 @endsection
+
+
+
+
+
+
+
+
+
+
 

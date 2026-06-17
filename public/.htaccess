@@ -1,3 +1,52 @@
+# -------------------------------------------------------
+# Gzip / Brotli compression
+# -------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/ld+json
+    AddOutputFilterByType DEFLATE image/svg+xml application/xml
+    AddOutputFilterByType DEFLATE font/woff font/woff2 application/font-woff application/font-woff2
+    AddOutputFilterByType DEFLATE text/javascript
+</IfModule>
+
+# -------------------------------------------------------
+# Browser caching
+# -------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html                         "access plus 0 seconds"
+    ExpiresByType text/css                          "access plus 1 year"
+    ExpiresByType application/javascript            "access plus 1 year"
+    ExpiresByType text/javascript                   "access plus 1 year"
+    ExpiresByType image/png                         "access plus 6 months"
+    ExpiresByType image/jpeg                        "access plus 6 months"
+    ExpiresByType image/gif                         "access plus 6 months"
+    ExpiresByType image/webp                        "access plus 6 months"
+    ExpiresByType image/svg+xml                     "access plus 6 months"
+    ExpiresByType image/x-icon                      "access plus 1 year"
+    ExpiresByType font/woff                         "access plus 1 year"
+    ExpiresByType font/woff2                        "access plus 1 year"
+    ExpiresByType application/font-woff             "access plus 1 year"
+    ExpiresByType application/font-woff2            "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(woff|woff2|ttf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+        Header set Cache-Control "public, max-age=15552000"
+    </FilesMatch>
+</IfModule>
+
+# -------------------------------------------------------
+# Rewrite rules
+# -------------------------------------------------------
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
