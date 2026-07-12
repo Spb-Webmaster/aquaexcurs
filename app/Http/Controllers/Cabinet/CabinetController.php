@@ -9,7 +9,9 @@ class CabinetController extends Controller
 
     public function cabinetUser():View
     {
-        return view('cabinet.cabinet');
+        return view('cabinet.cabinet', [
+            'user' => auth()->user(),
+        ]);
 
     }
 }
