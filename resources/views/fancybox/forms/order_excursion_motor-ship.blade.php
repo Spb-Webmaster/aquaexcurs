@@ -49,6 +49,7 @@
                 min="1"
                 max="50"
                 value="{{ old('quantity')?:'' }}"
+                required="{{ true }}"
             />
 
             <x-form.form-input-datepicker

@@ -1,8 +1,5 @@
 export function fieldErrors(errors, parentEl) {
 
-    console.log('errors')
-    console.log(errors)
-
     // Получаем список групп полных ввода (.app_input_group)
     const inputGroups = Array.from(parentEl.querySelectorAll('.app_input_group'));
 

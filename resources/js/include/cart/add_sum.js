@@ -356,20 +356,16 @@ export function add_sum() {
             .then((result) => {
 
                 if (result.errors) {
-                    console.log(result.errors)
+
                 } else {
 
                     /** если нет ошибок **/
-                   //  console.log(result.response)
-                     console.log(result.url)
                      window.location.href = result.url;
                 }
 
 
             })
             .catch((error) => {
-                console.log('.catch((error)...')
-                console.log(error)
 
             });
 

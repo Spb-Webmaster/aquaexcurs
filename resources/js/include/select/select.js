@@ -1,7 +1,6 @@
 export function select() {
 
     const selects = Array.from(document.querySelectorAll('.select-box .selected'))
-    console.log(selects)
     if(selects.length) {
         /** получим все возможные selected (типа вывод select` а) на всех формах **/
         for (let selected of selects) {

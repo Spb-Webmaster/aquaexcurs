@@ -29,9 +29,7 @@ export function uploadAvatar() {
 
                         } else {
                             /** если нет ошибок **/
-                            console.log(result.avatar)
                             const intervention = result.intervention;
-                            console.log(intervention);
                             cuAvatar.style.backgroundImage = 'url('+ intervention +')';
                             cuAvatar.querySelector('.mw').remove()
 

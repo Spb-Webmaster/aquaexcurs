@@ -19,7 +19,6 @@ export function asyncExecution() {
 
     const appFormButtons = Array.from(document.querySelectorAll('.app_form_button'))
 
-    console.log(appFormButtons.length)
    if(appFormButtons.length) {
        /** получим все возможные кнопки на всех формах **/
        for (let appFormButton of appFormButtons) {

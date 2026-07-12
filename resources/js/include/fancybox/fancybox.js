@@ -40,8 +40,6 @@ async  function openFancyBox(e) {
         const transferData = parentEl.dataset.transfer; /** дополнительные данные в json для blade **/
         const template = { template: formTemplate, author: '@AxeldMaster', data: transferData };
 
-        console.log(template)
-
         const response = await fetch('/fancybox-ajax', {
             method: 'POST',
             headers: {
