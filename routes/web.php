@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\SignInController;
+use App\Http\Controllers\Auth\SignOutController;
 use App\Http\Controllers\Axios\AxiosController;
 use App\Http\Controllers\Axios\AxiosSendingFromFormController;
 use App\Http\Controllers\Cabinet\CabinetController;
@@ -128,6 +129,12 @@ Route::controller(SignInController::class)->group(function () {
         ->middleware(RedirectIfAuthenticated::class)
         ->name('handle_login');
 
+});
+
+Route::controller(SignOutController::class)->group(function () {
+    Route::post('/logout', 'logout')
+        ->middleware(UserMiddleware::class)
+        ->name('logout');
 });
 /** * Auth */
 
