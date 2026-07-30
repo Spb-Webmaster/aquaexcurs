@@ -11,12 +11,12 @@ class GalleryComponent extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public object|array $gallery)
+    public function __construct(public object|array|null $gallery = null)
     {
         $img = [];
-        foreach ($gallery as $k => $image) {
+        foreach (($gallery ?? []) as $k => $image) {
 
-            if ($image['json_gallery_text']) {
+            if ($image['json_gallery_text'] ?? null) {
               $img[$k]['src'] = asset(intervention('384x238', $image['json_gallery_text'], 'images/news'));
               $img[$k]['link'] = asset(intervention('1000x619', $image['json_gallery_text'], 'images/news'));
             } else {
