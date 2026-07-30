@@ -8,8 +8,7 @@
             <div class="subtitle"> {!! $item->subtitle !!}</div>
         @endif
     </div>
-    <div class="html">{!! $item->html !!}
-    </div>
+    <div class="html">{!! $item->html !!}</div>
     <div class="desc">
         {!! $item->text !!}
     </div>

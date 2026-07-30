@@ -90,10 +90,10 @@ class PageFormPage extends FormPage
                 Grid::make([
                     Column::make([
 
-                        Textarea::make('HTML', 'html'),
+                        Textarea::make('HTML', 'html')->unescape(),
                         TinyMce::make('Описание', 'text'),
                         Textarea::make('HTML', 'html2'),
-                        TinyMce::make('Описание', 'text2'),
+                        TinyMce::make('Описание', 'text2')->unescape(),
 
                         Tabs::make([
                             Tab::make(__('Галерея'), [
