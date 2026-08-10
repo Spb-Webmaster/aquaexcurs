@@ -16,6 +16,9 @@
           <x-excursion.items-component />
         </div>
     </section>
+    <section class="home_banner">
+        <x-banner.excursion-banner-component />
+    </section>
     <section class="home_content">
         <div class="block relative">
           <x-content.one-column-component route="home" />
