@@ -12,3 +12,6 @@ Schedule::command('queue:work --stop-when-empty')
     ->withoutOverlapping();
 
 Schedule::command('quantity_tickets:cron')->dailyAt('00:01')->withoutOverlapping();
+
+// Копия базы и файлов на Яндекс Диск — воскресенье 03:30 (время сервера)
+Schedule::command('backup:yadisk')->weeklyOn(0, '03:30')->runInBackground()->withoutOverlapping(720);
